@@ -1,0 +1,6 @@
+__pycache__/
+*/__pycache__/
+.vscode/launch.json
+allure-results/
+archiv/
+.vscode/settings.json
