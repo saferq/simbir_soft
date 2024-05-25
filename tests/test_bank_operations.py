@@ -40,6 +40,6 @@ def test_bank_operations(driver):
         assert transactions[1]['amount'] == fib_number
         assert transactions[1]['type'] == 'Debit'
 
-    with allure.step('Generate report'):
+    with allure.step('Добавляем в отчет csv фаил'):
         generate_csv_report(transactions)
         allure.attach.file('transactions_report.csv', attachment_type=allure.attachment_type.CSV)

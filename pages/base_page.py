@@ -10,31 +10,47 @@ class BasePage:
         self.wait = WebDriverWait(self.driver, 10)
 
     def click_element(self, locator):
-        """Клик по элементу"""
+        """Клик по элементу
+
+        :param locator: локатор
+        """
         
         return self.wait.until(EC.element_to_be_clickable(locator)).click()
 
 
     def wait_element(self, locator):
-        """Проверка отображения элемента"""
+        """Проверка отображения элемента
+
+        :param locator: локатор
+        """
         
         return self.wait.until(EC.visibility_of_element_located(locator))
 
 
     def wait_elements(self, locator):
-        """Проверка отображения элементов"""
+        """Проверка отображения элементов
+
+        :param locator: локатор
+        """
         
         return self.wait.until(EC.visibility_of_all_elements_located(locator))
     
-    def select_item_dropdown(self, item_text):
-        """Выбрать из выпадающего списка"""
+    def select_item_dropdown(self, item_text: str):
+        """Выбрать строку из выпадающего списка
+
+        :param item_text: текст строки
+        """
         
         item = (By.XPATH, f"//option[text()='{item_text}']")
         self.click_element(item)
     
     
-    def input_text(self, locator, text):
-        """Ввести текст в поле ввода"""
+    def input_text(self, locator, text: str):
+        """Ввести текст в поле
+
+        :param locator: локатор
+        :param text: текст
+        """
         
         item = self.wait_element(locator)
         item.click()

@@ -17,7 +17,7 @@ def _fibonacci(n):
         return b
 
 def current_day_fibonacci():
-    """Вычислить N-е число Фибоначчи, на текущий день """    
+    """Вычислить N-е число Фибоначчи, текущий день месяца + 1"""    
     
     today = datetime.today().day
     n = today + 1

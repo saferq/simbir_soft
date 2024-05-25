@@ -15,10 +15,13 @@ class LoginPage(BasePage):
         self.driver.get(url)
         self.wait_element(self.customer_btn)
 
-    def select_login(self, username):
-        """Выбрать логин"""
+    def select_login(self, login: str):
+        """Выбрать логин
+
+        :param login: логин
+        """        
         
         self.click_element(self.customer_btn)
         self.click_element(self.select_btn)
-        self.select_item_dropdown(username)
+        self.select_item_dropdown(login)
         self.click_element(self.login_btn)

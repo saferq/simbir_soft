@@ -41,14 +41,20 @@ class AccountPage(BasePage):
         self.click_element(self.transactions_tab)
     
     def deposit(self, amount: str):
-        """Положить деньги на счет"""
+        """Положить деньги на счет
+
+        :param amount: сумма
+        """
         
         self.input_text(self.deposit_input, amount)
         self.click_element(self.deposit_btn)
         self.wait_element(self.msg_transaction)
 
     def withdraw(self, amount: str):
-        """Снять деньги со счета"""
+        """Снять деньги со счета
+
+        :param amount: сумма
+        """
         
         self.input_text(self.withdraw_input, amount)
         self.click_element(self.withdraw_btn)
@@ -56,5 +62,6 @@ class AccountPage(BasePage):
 
     def get_balance(self):
         """Получить размер баланса"""
+        
         balance = self.wait_element(self.balance_text).text
         return int(balance)
